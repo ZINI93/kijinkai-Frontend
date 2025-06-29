@@ -1,0 +1,81 @@
+/* src/components/Auth/Register.css */
+/* Login.css와 내용이 동일해도 무방합니다. */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .auth-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .auth-form h2 {
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: calc(100% - 20px); /* 패딩 고려 */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  .auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .auth-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .auth-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .auth-link a:hover {
+    text-decoration: underline;
+  }
