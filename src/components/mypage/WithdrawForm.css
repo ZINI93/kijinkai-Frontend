@@ -1,0 +1,69 @@
+/* src/components/mypage/WithdrawForm.css */
+.wallet-withdraw-form {
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .wallet-withdraw-form h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .wallet-withdraw-form .form-group {
+      margin-bottom: 15px;
+  }
+  
+  .wallet-withdraw-form .custom-select {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+  }
+  
+  .wallet-withdraw-form .custom-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* 금액 빠른 입력 버튼 스타일 (DepositForm과 동일) */
+  .amount-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: -5px;
+      margin-bottom: 20px;
+  }
+  
+  .amount-quick-button {
+      width: auto;
+      padding: 8px 12px;
+      font-size: 0.9em;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+  }
+  
+  .amount-quick-button:hover {
+      background-color: #0056b3;
+  }
+  
+  /* 출금 버튼 색상 */
+  .wallet-withdraw-form .withdraw-button {
+      background-color: #dc3545; /* 붉은색 출금 버튼 */
+  }
+  .wallet-withdraw-form .withdraw-button:hover {
+      background-color: #c82333;
+  }

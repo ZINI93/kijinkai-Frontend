@@ -1,0 +1,328 @@
+/* src/components/mypage/ProfileEdit.css */
+.profile-edit-section {
+    flex-grow: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    overflow: hidden; /* 자식 요소의 마진 상쇄 방지 */
+  }
+  
+  .profile-edit-wrapper {
+    display: flex;
+    padding: 25px 20px; /* 내부 여백 조정 */
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+  }
+  
+  .profile-edit-form {
+    flex-grow: 1;
+    max-width: 600px; /* 폼의 최대 너비 제한 */
+  }
+  
+  /* 각 섹션 그룹 (회원정보, 비밀번호 변경 등) */
+  .form-section-group {
+    margin-bottom: 30px; /* 섹션 간 간격 */
+    border: 1px solid #f0f0f0; /* 섹션 테두리 */
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .form-section-group:last-of-type {
+    margin-bottom: 0; /* 마지막 섹션은 아래 마진 없음 */
+  }
+  
+  .section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #555; /* 스크린샷과 유사한 진한 회색 하단 선 */
+  }
+  
+  /* 각 행 그룹 (라벨 + 인풋) */
+  .form-group.row-group {
+    display: flex;
+    align-items: center; /* 라벨과 입력 필드 수직 중앙 정렬 */
+    margin-bottom: 15px; /* 행 간 간격 */
+  }
+  
+  .form-group.row-group:last-child {
+    margin-bottom: 0; /* 마지막 행은 아래 마진 없음 */
+  }
+  
+  .form-group.row-group label {
+    flex-shrink: 0; /* 라벨이 줄어들지 않도록 */
+    width: 120px; /* 라벨 너비 고정 */
+    font-weight: bold;
+    color: #555;
+    text-align: right; /* 라벨 오른쪽 정렬 */
+    padding-right: 15px; /* 라벨과 입력 필드 사이 간격 */
+    margin-bottom: 0; /* 기존 label 마진 상쇄 */
+  }
+  
+  /* 일반 입력 필드 (FormInput 미사용 시) */
+  .full-width-input {
+    flex-grow: 1; /* 남은 공간 모두 차지 */
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 40px; /* 높이 고정 */
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+  }
+  
+  .full-width-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* 읽기 전용 필드 (userEmail, userNickname) */
+  .form-input-readonly {
+    background-color: #f8f9fa;
+    color: #495057;
+    cursor: not-allowed;
+    border-color: #e9ecef;
+  }
+  
+  /* 입력 필드와 버튼이 함께 있는 래퍼 */
+  .input-with-button-wrapper {
+    display: flex;
+    flex-grow: 1;
+    gap: 5px; /* 입력 필드와 버튼 사이 간격 */
+    align-items: center;
+  }
+  
+  .input-with-button-wrapper .full-width-input {
+    flex-grow: 1; /* 입력 필드가 공간을 최대한 차지 */
+    margin-bottom: 0; /* FormInput의 기본 마진 상쇄 */
+  }
+  
+  /* 작은 버튼 (인증번호 발송/확인, 주소검색) */
+  .action-button.small-button {
+    padding: 8px 15px;
+    min-width: 90px; /* 버튼 최소 너비 */
+    height: 40px; /* 입력 필드와 높이 맞추기 */
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #6c757d; /* 회색 기본 버튼 */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+  }
+  
+  .action-button.small-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .action-button.small-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* 인증 완료 버튼 색상 */
+  .action-button.small-button.verified-button {
+     background-color: #28a745; /* 녹색 */
+  }
+  
+  /* 비밀번호 불일치 오류 메시지 */
+  .error-message {
+    color: #dc3545; /* 빨간색 */
+    font-size: 0.85em;
+    margin-top: 5px;
+    margin-left: 135px; /* 라벨 너비 + 패딩만큼 들여쓰기 */
+    width: calc(100% - 135px); /* 남은 공간에서 너비 */
+  }
+  
+  /* 주소 검색 그룹 특화 스타일 */
+  .address-group .zipcode-input {
+    width: 100px; /* 우편번호 필드 너비 */
+    flex-grow: 0; /* 고정 너비 */
+  }
+  
+  /* 휴대폰 번호 입력 그룹 */
+  .phone-inputs {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* 하이픈과 입력 필드 사이 간격 */
+    flex-grow: 1; /* 남은 공간 차지 */
+  }
+  
+  .phone-inputs .phone-part {
+    width: calc(33.33% - 10px); /* 3등분 + 간격 고려 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    text-align: center;
+    height: 40px;
+    box-sizing: border-box;
+  }
+  
+  .phone-inputs .phone-part:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .phone-inputs span {
+    font-size: 1.2em;
+    color: #6c757d;
+    flex-shrink: 0; /* 하이픈이 줄어들지 않도록 */
+  }
+  
+  /* 수신 동의 체크박스 그룹 */
+  .receive-group {
+     display: flex;
+     flex-direction: column; /* 체크박스를 세로로 나열 */
+     gap: 10px;
+     align-items: flex-start; /* 좌측 정렬 */
+     margin-left: 120px; /* 라벨 너비만큼 들여쓰기 */
+  }
+  .receive-group .checkbox-label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 0; /* 기본 form-group 마진 상쇄 */
+    cursor: pointer;
+  }
+  
+  .receive-group .checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0; /* 체크박스 크기 고정 */
+  }
+  
+  
+  /* 하단 버튼 그룹 */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px; /* 섹션과의 간격 */
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+  }
+  
+  .button-group .common-button { /* Button 컴포넌트의 기본 스타일 */
+    width: 150px;
+    padding: 12px 20px; /* 버튼 패딩 조정 */
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .button-group .cancel-button {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .button-group .cancel-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .button-group .submit-button { /* 수정 버튼은 더 강조 */
+    background-color: #007bff; /* 파란색 */
+    color: white;
+  }
+  
+  .button-group .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* 사이드 배너들 */
+  .profile-side-banners {
+    flex-shrink: 0;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .profile-side-banners img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* 미디어 쿼리: 작은 화면에서 레이아웃 조정 */
+  @media (max-width: 768px) {
+    .profile-edit-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .profile-edit-form {
+      max-width: 100%;
+      width: 100%;
+    }
+    .profile-side-banners {
+      width: 100%;
+      flex-direction: row; /* 배너를 가로로 나열 */
+      justify-content: center;
+      flex-wrap: wrap; /* 배너가 많으면 줄바꿈 */
+    }
+    .profile-side-banners img {
+        width: 120px; /* 작은 화면에서 이미지 크기 조절 */
+        height: 90px;
+        margin-bottom: 0; /* 가로 배열 시 하단 마진 제거 */
+    }
+  
+    .form-group.row-group {
+      flex-direction: column; /* 라벨과 인풋 세로로 쌓기 */
+      align-items: flex-start;
+    }
+    .form-group.row-group label {
+      width: 100%; /* 라벨 너비 100% */
+      text-align: left; /* 좌측 정렬 */
+      padding-right: 0;
+      margin-bottom: 5px; /* 라벨 아래 간격 */
+    }
+    .input-with-button-wrapper {
+      flex-direction: column; /* 버튼과 인풋 세로로 쌓기 */
+      width: 100%;
+      gap: 10px;
+    }
+    .input-with-button-wrapper .full-width-input {
+      width: 100%; /* 너비 100% */
+    }
+    .action-button.small-button {
+      width: 100%; /* 버튼 너비 100% */
+    }
+    .address-group .zip-search {
+      flex-direction: column;
+      width: 100%;
+    }
+    .address-group .zipcode-input {
+      width: 100%;
+    }
+    .phone-inputs {
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 5px;
+      justify-content: center; /* 번호 부분 중앙 정렬 */
+    }
+    .phone-inputs .phone-part {
+      width: calc(33% - 10px);
+    }
+    .error-message {
+      margin-left: 0; /* 들여쓰기 제거 */
+      width: 100%;
+      text-align: left;
+    }
+    .receive-group {
+        margin-left: 0; /* 들여쓰기 제거 */
+        width: 100%;
+    }
+  }

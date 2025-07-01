@@ -1,0 +1,14 @@
+/* src/components/layout/TopNotificationBar.css */
+.top-notification-bar {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 8px 20px;
+    font-size: 0.85em;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  .notice-tag {
+    color: #000000;
+    font-weight: bold;
+    margin-right: 5px;
+  }

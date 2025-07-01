@@ -1,0 +1,10 @@
+/* src/pages/OrderPage.css */
+.order-page-container {
+    max-width: 800px; /* 주문 폼의 최대 너비 */
+    margin: 40px auto; /* 중앙 정렬 및 상하 여백 */
+    padding: 0 20px; /* 좌우 패딩 */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }

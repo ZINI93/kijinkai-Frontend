@@ -1,0 +1,30 @@
+/* src/components/mypage/ProcessingOrderNotice.css */
+.processing-order-notice {
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  .processing-order-notice h4 {
+    font-size: 1.15em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+  }
+  
+  .processing-order-notice ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .processing-order-notice li {
+    margin-bottom: 8px;
+  }

@@ -1,0 +1,115 @@
+/* src/components/mypage/ProcessingOrderList.css */
+.processing-order-list {
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .processing-order-list h4 {
+    font-size: 1.15em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+  }
+  
+  .order-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+  
+  .order-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px; /* 테이블 최소 너비 (필요에 따라 조정) */
+    font-size: 0.9em;
+  }
+  
+  .order-list-table th,
+  .order-list-table td {
+    border: 1px solid #eee;
+    padding: 10px 12px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .order-list-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .order-list-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+  }
+  
+  .order-list-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .order-list-table .item-url-col {
+    width: 35%;
+    text-align: left;
+  }
+  
+  .order-list-table .product-url-link {
+    color: #007bff;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  
+  .order-list-table .product-url-link:hover {
+    text-decoration: underline;
+  }
+  
+  .order-list-table .item-price-col {
+    width: 100px;
+    font-weight: bold;
+    text-align: right;
+  }
+  .order-list-table .item-quantity-col {
+      width: 60px; /* 수량 컬럼 너비 조정 */
+      text-align: center;
+      font-weight: bold;
+  }
+  
+  .order-list-table .item-memo-col {
+    width: auto;
+    text-align: left;
+    word-break: break-all;
+    max-width: 200px;
+  }
+  
+  .order-list-table .delete-item-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: auto; /* Button 컴포넌트의 width: 100% 오버라이드 */
+  }
+  
+  .order-list-table .delete-item-button:hover {
+    background-color: #c82333;
+  }
+  
+  .no-orders-message {
+    padding: 50px 20px;
+    text-align: center;
+    color: #777;
+    font-size: 1.1em;
+  }
+  
+  /* 미디어 쿼리 (테이블 스크롤이 더 중요) */
+  @media (max-width: 768px) {
+    .order-list-table {
+      min-width: 700px;
+    }
+  }

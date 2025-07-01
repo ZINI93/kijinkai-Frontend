@@ -1,8 +1,9 @@
 // src/components/Auth/Register.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Button from "../common/Button"; // Button 컴포넌트 임포트!
+import Button from "../common/Button";
+import FormInput from "../common/FormInput";
 import "./Register.css";
 
 function Register() {
@@ -10,17 +11,34 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [nickname, setNickname] = useState("");
+  const [passwordMismatch, setPasswordMismatch] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (confirmPassword === "") {
+      setPasswordMismatch(false);
+    } else if (password !== confirmPassword) {
+      setPasswordMismatch(true);
+    } else {
+      setPasswordMismatch(false);
+    }
+  }, [password, confirmPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
-      alert("비밀번호가 일치하지 않습니다!");
+    if (passwordMismatch) {
+      alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
+      return;
+    }
+
+    if (!password || !confirmPassword) {
+      alert("비밀번호를 입력해주세요.");
       return;
     }
 
     try {
+      // User 테이블에만 저장하는 API (email, password, nickname)
       const API_URL = "http://localhost:8080/api/auth/register";
 
       const response = await axios.post(API_URL, {
@@ -33,7 +51,7 @@ function Register() {
       alert(
         "회원가입이 성공적으로 완료되었습니다! 로그인 페이지로 이동합니다."
       );
-      navigate("/login");
+      navigate("/login"); // 회원가입 성공 시 로그인 페이지로 이동
     } catch (error) {
       console.error(
         "회원가입 실패:",
@@ -50,53 +68,46 @@ function Register() {
   return (
     <div className="auth-container">
       <form className="auth-form" onSubmit={handleSubmit}>
-        <h2>Kijinkai 회원가입</h2>
+        <h2>회원가입</h2>
 
-        <div className="form-group">
-          <label htmlFor="email">아이디 (이메일):</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+        <FormInput
+          label="아이디 (이메일)"
+          id="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-        <div className="form-group">
-          <label htmlFor="password">비밀번호:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+        <FormInput
+          label="비밀번호"
+          id="password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
 
-        <div className="form-group">
-          <label htmlFor="confirmPassword">비밀번호 확인:</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
+        <FormInput
+          label="비밀번호 확인"
+          id="confirmPassword"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+          isInvalid={passwordMismatch}
+          errorMessage={passwordMismatch ? "비밀번호가 일치하지 않습니다." : ""}
+        />
 
-        <div className="form-group">
-          <label htmlFor="nickname">닉네임:</label>
-          <input
-            type="text"
-            id="nickname"
-            value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
-            required
-          />
-        </div>
+        <FormInput
+          label="닉네임"
+          id="nickname"
+          type="text"
+          value={nickname}
+          onChange={(e) => setNickname(e.target.value)}
+          required
+        />
 
-        {/* 기존 <button> 태그 대신 Button 컴포넌트 사용 */}
         <Button type="submit">회원가입</Button>
 
         <p className="auth-link">

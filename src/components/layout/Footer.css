@@ -1,0 +1,55 @@
+/* src/components/layout/Footer.css */
+.main-footer {
+    background-color: #333;
+    color: #eee;
+    padding: 40px 20px;
+    font-size: 0.9em;
+    margin-top: 50px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    gap: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px; /* 작은 화면에서 잘리지 않도록 최소 너비 설정 */
+    margin-bottom: 20px;
+  }
+  
+  .footer-section h3 {
+    color: #f1f1f1;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-section p {
+    line-height: 1.6;
+  }
+  
+  .footer-section img {
+    vertical-align: middle;
+  }
+  
+  .copyright {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    margin-top: 20px;
+    color: #aaa;
+  }

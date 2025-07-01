@@ -1,0 +1,48 @@
+/* src/components/mypage/ApprovedOrderNotice.css */
+.approved-order-notice {
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px; /* 아래 리스트와의 간격 */
+    line-height: 1.6;
+  }
+  
+  .approved-order-notice h4 {
+    font-size: 1.15em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+  }
+  
+  .approved-order-notice .notice-sub-title {
+    margin-top: 25px; /* 서브 타이틀 상단 간격 */
+    border-bottom: 1px dashed #eee; /* 하단 점선 유지 */
+  }
+  
+  .approved-order-notice ul {
+    list-style: disc; /* 점 목록 */
+    margin-left: 20px;
+    padding: 0;
+    color: #666;
+    margin-bottom: 20px; /* 목록 아래 간격 */
+  }
+  
+  .approved-order-notice li {
+    margin-bottom: 8px;
+  }
+  
+  .approved-order-notice p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .approved-order-notice .important-notice {
+    color: #dc3545; /* 빨간색 강조 텍스트 */
+    font-weight: bold;
+    border-top: 1px dashed #eee; /* 상단 점선 */
+    padding-top: 15px; /* 점선 위 간격 */
+    margin-top: 15px; /* 위 p 태그와의 간격 */
+  }

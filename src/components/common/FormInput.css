@@ -1,0 +1,41 @@
+/* src/components/common/FormInput.css */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: calc(100% - 20px); /* 패딩 고려 */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* 전환 효과 추가 */
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* 유효하지 않은 입력 필드 스타일 */
+  .form-group.invalid input,
+  .form-group input.input-invalid { /* input-invalid 클래스도 동시에 적용 가능 */
+    border-color: #dc3545; /* 빨간색 테두리 */
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25); /* 빨간색 그림자 */
+  }
+  
+  .error-message {
+    color: #dc3545; /* 빨간색 글씨 */
+    font-size: 0.85em;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }

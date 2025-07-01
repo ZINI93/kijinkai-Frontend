@@ -1,0 +1,17 @@
+/* src/pages/MyPage.css */
+.mypage-container {
+    display: flex;
+    max-width: 1200px; /* 전체 마이페이지 컨테이너 최대 너비 */
+    margin: 40px auto; /* 중앙 정렬 및 상하 여백 */
+    padding: 0 20px; /* 좌우 패딩 */
+    gap: 30px; /* 사이드 메뉴와 콘텐츠 사이 간격 */
+    align-items: flex-start; /* 상단 정렬 */
+  }
+  
+  /* 작은 화면에서는 세로로 쌓이도록 */
+  @media (max-width: 768px) {
+    .mypage-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

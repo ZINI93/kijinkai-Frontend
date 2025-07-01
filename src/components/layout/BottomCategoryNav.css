@@ -1,0 +1,76 @@
+/* src/components/layout/BottomCategoryNav.css */
+.bottom-category-nav {
+    background-color: #000000; /* 검은색 배경 */
+    padding: 10px 0; /* 좌우 패딩 제거, 내부 콘텐츠 래퍼에서 패딩 처리 */
+    display: flex;
+    /* justify-content: space-between; /* <-- 이 부분을 변경합니다 */
+    justify-content: center; /* 모든 요소를 중앙으로 모음 */
+    align-items: center;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* 새로운 내부 컨테이너를 추가하여 콘텐츠의 최대 너비와 좌우 패딩을 제어합니다. */
+  .bottom-category-nav .nav-content-wrapper {
+    display: flex;
+    justify-content: space-between; /* 내부에서는 다시 양끝 정렬로 메뉴와 마이페이지 분리 */
+    align-items: center;
+    max-width: 1200px; /* 최대 너비 제한 */
+    width: 100%; /* 너비를 100%로 설정 */
+    padding: 0 20px; /* 좌우 패딩 추가 */
+    box-sizing: border-box; /* 패딩이 너비를 늘리지 않도록 */
+  }
+  
+  .bottom-category-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* flex-grow: 1; */ /* 메뉴가 남은 공간을 채우지 않도록 제거 또는 주석 처리 */
+    justify-content: flex-start; /* 메뉴는 좌측 정렬 (wrapper 내에서) */
+  }
+  
+  .bottom-category-nav li {
+    margin-right: 25px; /* 메뉴 항목 간 간격 */
+    white-space: nowrap;
+  }
+  
+  .bottom-category-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: color 0.2s ease;
+    padding: 5px 0;
+  }
+  
+  .bottom-category-nav a:hover {
+    color: #f8d7da;
+  }
+  
+  .mypage-shortcut {
+    /* margin-left: auto; */ /* 이제 nav-content-wrapper 안에서 space-between으로 처리 */
+    background-color: #dc3545;
+    border-radius: 5px;
+    padding: 8px 15px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .mypage-shortcut:hover {
+    background-color: #c82333;
+  }
+  
+  .mypage-shortcut a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mypage-shortcut a .icon-dot {
+      margin-right: 5px;
+      font-size: 1.2em;
+      line-height: 1;
+  }

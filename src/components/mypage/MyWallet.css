@@ -1,0 +1,270 @@
+/* src/components/mypage/MyWallet.css */
+.my-wallet-section {
+    flex-grow: 1;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  
+  .wallet-content-wrapper {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .wallet-main-area {
+    flex-grow: 1;
+  }
+  
+  .wallet-info-box {
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .wallet-info-box h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .wallet-info-box p {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .wallet-info-box .highlight-text {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 15px;
+    border-top: 1px dashed #eee;
+    padding-top: 15px;
+  }
+  
+  .wallet-info-box .account-info {
+      font-size: 1.1em;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e9ecef;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+  }
+  
+  /* 현재 잔액 표시 */
+  .current-balance-display {
+      background-color: #e6f7ff; /* 연한 파란색 배경 */
+      border: 1px solid #cceeff;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      color: #007bff;
+  }
+  .current-balance-display strong {
+      color: #000000; /* 잔액 숫자는 검은색으로 */
+      font-size: 1.3em;
+  }
+  
+  
+  .bank-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap; /* 작은 화면에서 버튼 줄바꿈 */
+  }
+  
+  .bank-button {
+      width: auto;
+      padding: 8px 15px;
+      font-size: 0.9em;
+      background-color: #6c757d;
+  }
+  .bank-button:hover {
+      background-color: #5a6268;
+  }
+  .bank-button:disabled {
+      background-color: #e9ecef;
+      color: #999;
+      cursor: not-allowed;
+  }
+  
+  
+  /* 입금/출금 폼 공통 스타일 */
+  .wallet-deposit-form,
+  .wallet-withdraw-form { /* 출금 폼 클래스도 추가 */
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .wallet-deposit-form h4,
+  .wallet-withdraw-form h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .wallet-deposit-form .form-group,
+  .wallet-withdraw-form .form-group {
+      margin-bottom: 15px;
+  }
+  
+  .wallet-deposit-form .custom-select,
+  .wallet-withdraw-form .custom-select {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+  }
+  
+  .wallet-deposit-form .custom-select:focus,
+  .wallet-withdraw-form .custom-select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* 금액 빠른 입력 버튼 스타일 */
+  .amount-buttons {
+      display: flex;
+      flex-wrap: wrap; /* 버튼들이 한 줄에 다 안 들어가면 줄바꿈 */
+      gap: 8px; /* 버튼들 사이 간격 */
+      margin-top: -5px; /* FormInput의 label과 겹치지 않도록 조정 */
+      margin-bottom: 20px;
+  }
+  
+  .amount-quick-button {
+      width: auto; /* 버튼 너비 자동 조절 */
+      padding: 8px 12px;
+      font-size: 0.9em;
+      background-color: #007bff; /* 파란색 */
+      color: white;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+  }
+  
+  .amount-quick-button:hover {
+      background-color: #0056b3;
+  }
+  
+  /* 출금 버튼 색상 (선택적) */
+  .wallet-withdraw-form .withdraw-button {
+      background-color: #dc3545; /* 붉은색 출금 버튼 */
+  }
+  .wallet-withdraw-form .withdraw-button:hover {
+      background-color: #c82333;
+  }
+  
+  
+  .wallet-regulations {
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .wallet-regulations h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .wallet-regulations ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: #666;
+  }
+  
+  .wallet-regulations li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .wallet-side-banner {
+    flex-shrink: 0;
+    width: 180px;
+  }
+  
+  .wallet-side-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .wallet-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+  
+  .wallet-tabs .tab-button {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-bottom: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #666;
+    border-radius: 8px 8px 0 0; /* 상단만 둥글게 */
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-right: 5px; /* 탭 버튼 간격 */
+  }
+  
+  .wallet-tabs .tab-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .wallet-tabs .tab-button.active {
+    background-color: #fff; /* 활성화된 탭은 흰색 배경 */
+    color: #000000; /* 활성화된 탭은 검은색 글씨 */
+    border-color: #eee;
+    border-bottom: 1px solid #fff; /* 활성화된 탭 아래 선을 배경색과 맞춰서 이어지는 느낌 */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05); /* 상단에 그림자 */
+    z-index: 1; /* 다른 요소 위로 올라오게 */
+    position: relative; /* z-index 적용을 위해 */
+  }
+  
+  
+  /* 미디어 쿼리 */
+  @media (max-width: 992px) {
+    .wallet-content-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    .wallet-main-area {
+        width: 100%;
+    }
+    .wallet-side-banner {
+      width: 100%;
+      margin-top: 30px;
+    }
+  }

@@ -1,0 +1,20 @@
+/* src/components/common/TitleBar.css */
+.title-bar {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 0 0; /* 상단만 둥글게 */
+  }
+  
+  .title-bar h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  .title-bar p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    color: #666;
+  }

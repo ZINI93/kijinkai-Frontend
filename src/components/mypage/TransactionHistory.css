@@ -1,0 +1,117 @@
+/* src/components/mypage/TransactionHistory.css */
+.transaction-history-section {
+    flex-grow: 1;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  
+  .transaction-history-section .section-body {
+    padding: 20px;
+  }
+  
+  /* 필터 옵션 버튼들 */
+  .filter-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+  
+  .filter-button {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    width: auto; /* Button 컴포넌트의 width: 100% 오버라이드 */
+  }
+  
+  .filter-button:hover {
+    background-color: #e2e6ea;
+    color: #333;
+  }
+  
+  .filter-button.active {
+    background-color: #000000; /* 활성화된 필터 버튼은 검은색 */
+    color: white;
+    border-color: #000000;
+  }
+  
+  /* 거래 내역 테이블 */
+  .transaction-table-wrapper {
+    overflow-x: auto; /* 테이블이 넘칠 경우 스크롤바 생성 */
+  }
+  
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+    min-width: 600px; /* 테이블 최소 너비 설정 (스크롤용) */
+  }
+  
+  .transaction-table th,
+  .transaction-table td {
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  .transaction-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .transaction-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+  }
+  
+  .transaction-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* 금액 및 잔액 컬럼 정렬 */
+  .transaction-table .amount,
+  .transaction-table .balance {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  /* 입금/출금/구매에 따른 색상 구분 (선택 사항) */
+  .transaction-table tr.deposit td.amount {
+    color: #28a745; /* 녹색 (입금) */
+  }
+  .transaction-table tr.withdraw td.amount,
+  .transaction-table tr.purchase td.amount {
+    color: #dc3545; /* 빨간색 (출금/구매) */
+  }
+  
+  /* 메시지 스타일 */
+  .loading-message,
+  .error-message-display,
+  .no-transactions-message {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 1.1em;
+    color: #777;
+  }
+  
+  .error-message-display {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  /* 페이지네이션 (추후 구현될 경우) */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }

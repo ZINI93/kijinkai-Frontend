@@ -1,0 +1,57 @@
+/* src/components/mypage/SideMenu.css */
+.mypage-side-menu {
+    flex-shrink: 0; /* 줄어들지 않도록 */
+    width: 250px; /* 사이드 메뉴 너비 */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(201, 151, 151, 0.05);
+  }
+  
+  .mypage-side-menu .menu-header {
+    padding: 0 20px 20px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .mypage-side-menu .menu-header h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .mypage-side-menu .menu-header .welcome-message {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .mypage-side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mypage-side-menu li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .mypage-side-menu li a:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+  }
+  
+  /* NavLink의 active 클래스 */
+  .mypage-side-menu li a.active {
+    background-color: #000000; /* 활성화된 메뉴 배경색 */
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid #dc3545; /* 강조선 */
+    padding-left: 15px; /* 강조선 때문에 패딩 조정 */
+  }

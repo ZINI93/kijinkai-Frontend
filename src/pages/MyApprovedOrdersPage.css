@@ -1,0 +1,17 @@
+/* src/pages/MyApprovedOrdersPage.css */
+.my-approved-orders-page {
+    flex-grow: 1; /* MyPageContent의 mypage-main-area 내부에서 남은 공간 채우기 */
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  
+  .my-approved-orders-page .title-bar { /* 페이지 내부의 TitleBar 스타일 조정 */
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .approved-orders-content {
+    padding: 20px; /* 내부 콘텐츠 여백 */
+  }
