@@ -1,12 +1,12 @@
-// src/components/mypage/MyPageContent.jsx (수정)
+// src/components/mypage/MyPageContent.jsx
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import MyWallet from "./MyWallet";
 import ProfileEdit from "./ProfileEdit";
 import TransactionHistory from "./TransactionHistory";
 import MyApprovedOrdersPage from "../../pages/MyApprovedOrdersPage";
-import MyProcessingOrdersPage from "../../pages/MyProcessingOrdersPage"; // MyProcessingOrdersPage 임포트
-import MyFirstCompletedOrdersPage from "../../pages/MyFirstCompletedOrdersPage"; // MyFirstCompletedOrdersPage 임포트
+import MyProcessingOrdersPage from "../../pages/MyProcessingOrdersPage";
+import MyFirstCompletedOrdersPage from "../../pages/MyFirstCompletedOrdersPage";
 import MyOrdersPage from "../../pages/MyOrdersPage";
 import TitleBar from "../common/TitleBar";
 import { useAuth } from "../../context/AuthContext";
@@ -57,7 +57,6 @@ function MyPageContent() {
                         {proxyStatusCounts.구매대행내역} <small>건</small>
                       </span>
                     </Link>
-                    {/* "진행중/구매요청" 항목을 MyProcessingOrdersPage로 연결 */}
                     <Link
                       to="/mypage/orders?status=processing"
                       className="status-item clickable"
@@ -85,8 +84,9 @@ function MyPageContent() {
                         {proxyStatusCounts.차결제완료} <small>건</small>
                       </span>
                     </Link>
+                    {/* 2차 결제요청 링크 경로 수정 */}
                     <Link
-                      to="/mypage/payment?type=second_request"
+                      to="/mypage/orders?status=second_request"
                       className="status-item clickable"
                     >
                       <span className="status-label">2차 결제요청</span>
@@ -94,8 +94,9 @@ function MyPageContent() {
                         {proxyStatusCounts.차결제요청2} <small>건</small>
                       </span>
                     </Link>
+                    {/* 2차 결제완료 링크 경로 수정 */}
                     <Link
-                      to="/mypage/payment?type=second_completed"
+                      to="/mypage/orders?status=second_completed"
                       className="status-item clickable"
                     >
                       <span className="status-label">2차 결제완료</span>
@@ -103,13 +104,24 @@ function MyPageContent() {
                         {proxyStatusCounts.차결제완료2} <small>건</small>
                       </span>
                     </Link>
+                    {/* 국제배송 링크 수정 */}
                     <Link
-                      to="/mypage/shipping-request?status=confirmed"
+                      to="/mypage/orders?status=international_shipping"
                       className="status-item clickable"
                     >
-                      <span className="status-label">배송확인</span>
+                      <span className="status-label">국제배송</span>
                       <span className="status-value">
-                        {proxyStatusCounts.배송확인} <small>건</small>
+                        {deliveryStatusCounts.국제배송중} <small>건</small>
+                      </span>
+                    </Link>
+                    {/* 배송완료 링크 수정 */}
+                    <Link
+                      to="/mypage/orders?status=delivery_completed"
+                      className="status-item clickable"
+                    >
+                      <span className="status-label">배송완료</span>
+                      <span className="status-value">
+                        {deliveryStatusCounts.국제배송완료} <small>건</small>
                       </span>
                     </Link>
                   </div>
@@ -144,16 +156,14 @@ function MyPageContent() {
           <Route path="/membership-level" element={<ProfileEdit />} />
           <Route path="/transaction-history" element={<TransactionHistory />} />
 
-          {/* MyOrdersPage 라우트 (status 쿼리 파라미터 처리) */}
+          {/* MyOrdersPage 라우트 (모든 status 쿼리 파라미터 처리) */}
           <Route path="/orders" element={<MyOrdersPage />} />
-
-          {/* MyProcessingOrdersPage 라우트를 MyOrdersPage 내부에서 렌더링하므로 직접 Route 추가하지 않음 */}
 
           <Route
             path="/shipping-request"
             element={
               <section className="mypage-section">
-                <TitleBar title="귀국 배송 신청" />
+                <TitleBar title="배송 신청" />
               </section>
             }
           />

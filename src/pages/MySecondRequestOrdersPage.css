@@ -1,0 +1,15 @@
+/* src/pages/MySecondRequestOrdersPage.css */
+.my-second-request-orders-page {
+    flex-grow: 1;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  .my-second-request-orders-page .title-bar {
+    border-radius: 8px 8px 0 0;
+  }
+  .second-request-orders-content {
+    padding: 20px;
+  }

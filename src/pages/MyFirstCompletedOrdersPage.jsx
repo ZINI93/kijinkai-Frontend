@@ -1,23 +1,22 @@
 // src/pages/MyFirstCompletedOrdersPage.jsx
 import React from "react";
-// import TitleBar from '../components/common/TitleBar'; // 임시로 주석 처리
-// import FirstCompletedOrderList from '../components/mypage/FirstCompletedOrderList'; // 임시로 주석 처리
+import TitleBar from "../components/common/TitleBar"; // TitleBar 임포트 해제
+import FirstCompletedOrderList from "../components/mypage/FirstCompletedOrderList"; // FirstCompletedOrderList 임포트 해제
 import "./MyFirstCompletedOrdersPage.css";
 
 function MyFirstCompletedOrdersPage() {
   return (
-    <div
-      style={{
-        padding: "30px",
-        border: "3px solid green",
-        backgroundColor: "#e6ffe6",
-        textAlign: "center",
-      }}
-    >
-      <h1>1차 결제 완료 페이지 (테스트)</h1>
-      <p>
-        이 메시지가 보인다면 페이지 컴포넌트는 정상적으로 렌더링되고 있습니다.
-      </p>
+    <div className="my-first-completed-orders-page">
+      {/* TitleBar를 사용하여 페이지 제목과 설명을 표시 */}
+      <TitleBar
+        title="나의 대행신청 현황 - 1차 결제완료"
+        description="1차 결제가 완료된 주문 내역입니다."
+      />
+
+      <div className="first-completed-orders-content">
+        {/* FirstCompletedOrderList 컴포넌트를 렌더링하여 실제 목록 표시 */}
+        <FirstCompletedOrderList />
+      </div>
     </div>
   );
 }
