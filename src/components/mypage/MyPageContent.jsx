@@ -6,6 +6,7 @@ import ProfileEdit from "./ProfileEdit";
 import TransactionHistory from "./TransactionHistory";
 import MyApprovedOrdersPage from "../../pages/MyApprovedOrdersPage";
 import MyProcessingOrdersPage from "../../pages/MyProcessingOrdersPage"; // MyProcessingOrdersPage 임포트
+import MyFirstCompletedOrdersPage from "../../pages/MyFirstCompletedOrdersPage"; // MyFirstCompletedOrdersPage 임포트
 import MyOrdersPage from "../../pages/MyOrdersPage";
 import TitleBar from "../common/TitleBar";
 import { useAuth } from "../../context/AuthContext";
@@ -76,21 +77,12 @@ function MyPageContent() {
                       </span>
                     </Link>
                     <Link
-                      to="/mypage/payment?type=first_request"
-                      className="status-item clickable"
-                    >
-                      <span className="status-label">1차 결제요청</span>
-                      <span className="status-value">
-                        {proxyStatusCounts["1차 결제요청"]} <small>건</small>
-                      </span>
-                    </Link>
-                    <Link
-                      to="/mypage/payment?type=first_completed"
+                      to="/mypage/orders?status=first_completed"
                       className="status-item clickable"
                     >
                       <span className="status-label">1차 결제완료</span>
                       <span className="status-value">
-                        {proxyStatusCounts["1차 결제완료"]} <small>건</small>
+                        {proxyStatusCounts.차결제완료} <small>건</small>
                       </span>
                     </Link>
                     <Link
@@ -99,7 +91,7 @@ function MyPageContent() {
                     >
                       <span className="status-label">2차 결제요청</span>
                       <span className="status-value">
-                        {proxyStatusCounts["2차 결제요청"]} <small>건</small>
+                        {proxyStatusCounts.차결제요청2} <small>건</small>
                       </span>
                     </Link>
                     <Link
