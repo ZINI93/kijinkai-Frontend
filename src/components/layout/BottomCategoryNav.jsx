@@ -8,7 +8,12 @@ function BottomCategoryNav() {
     <nav className="bottom-category-nav">
       <ul>
         <li>
-          <Link to="/self-purchase">Custum Service</Link>
+          <a href="/AdminPanel" target="_blank" rel="noopener noreferrer">
+            Admin panel
+          </a>
+        </li>
+        <li>
+          <Link to="/self-purchase">Custom Service</Link>
         </li>
         <li>
           <Link to="/shipping-agent">Event</Link>

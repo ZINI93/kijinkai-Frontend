@@ -21,6 +21,12 @@ main {
   box-sizing: border-box; /* 패딩이 너비를 늘리지 않도록 */
 }
 
+main.admin-layout {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
 /* Auth 컴포넌트의 중앙 정렬을 위해 main 내부의 flex 설정을 제거 */
 /* 로그인/회원가입 페이지는 자체적으로 중앙 정렬을 수행하도록 합니다. */
 /* App.css의 main 부분에서 display: flex; justify-content: center; align-items: flex-start; 를 제거하거나 특정 라우트에서만 적용되도록 조정 */
