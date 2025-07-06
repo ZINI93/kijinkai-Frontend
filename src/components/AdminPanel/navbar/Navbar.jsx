@@ -17,23 +17,32 @@ const Navbar = () => {
             </div>
             <div className="items">
               <div className="item">
-                <LanguageIcon />
+                <LanguageIcon className="icon" />
                 japanese
               </div>
               <div className="item">
-                <NotificationsActiveIcon />
+                <DarkModeIcon className="icon" />
               </div>
               <div className="item">
-                <FullscreenIcon />
+                <FullscreenIcon className="icon" />
               </div>
               <div className="item">
-                <MarkUnreadChatAltIcon />
+                <NotificationsActiveIcon className="icon" />
+                <span className="counter">2</span>
               </div>
               <div className="item">
-                <FormatListBulletedIcon />
+                <MarkUnreadChatAltIcon className="icon" />
+                <span className="counter">1</span>
               </div>
               <div className="item">
-                <DarkModeIcon />
+                <FormatListBulletedIcon className="icon" />
+              </div>
+              <div className="item">
+                <img 
+                  src="https://i.pinimg.com/736x/94/36/1e/94361e0ddf929122c5438a36235d44b5.jpg"
+                  alt="profile"
+                  className="avatar" 
+                  />
               </div>
             </div>
           </div>
