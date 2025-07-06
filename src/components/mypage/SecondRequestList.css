@@ -1,0 +1,218 @@
+/* src/components/mypage/SecondRequestList.css */
+.second-request-list {
+  background-color: #fcfcfc;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.second-request-list h4 {
+  font-size: 1.15em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #eee;
+}
+
+.list-controls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.order-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.order-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* 테이블 최소 너비 조정 */
+  font-size: 0.9em;
+}
+
+.order-list-table th,
+.order-list-table td {
+  border: 1px solid #eee;
+  padding: 10px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.order-list-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-list-table tbody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.order-list-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* 상품 정보 컬럼 (이미지 제거 후 텍스트 위주) */
+.order-list-table .item-info-col {
+  width: 45%; /* 너비 조정 */
+  text-align: left;
+  display: block; /* 내부 flex 제거 */
+  padding-left: 10px; /* 좌측 여백 */
+}
+
+/* 상품 썸네일 제거 */
+.order-list-table .product-thumb {
+  display: none;
+}
+
+.order-list-table .product-details {
+  display: block; /* flex 제거 */
+  gap: 0;
+}
+
+.order-list-table .product-url-link {
+  color: #007bff;
+  text-decoration: none;
+  word-break: break-all;
+  font-weight: 500;
+  display: block; /* URL이 길 때 다음 줄로 넘어가도록 */
+  margin-bottom: 5px;
+}
+
+.order-list-table .product-url-link:hover {
+  text-decoration: underline;
+}
+
+.order-list-table .quantity-memo {
+  font-size: 0.8em;
+  color: #777;
+}
+
+/* 금액 관련 컬럼 */
+.order-list-table .item-price-col,
+.order-list-table .item-quantity-col { /* item-quantity-col 추가 */
+  width: 100px; /* 너비 조정 */
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* 개별 상품별 국제 배송비 및 총 2차 결제금액 컬럼 제거 */
+.order-list-table .item-shipping-fee-col,
+.order-list-table .item-total-second-payment-col {
+  display: none; /* 이 컬럼들은 테이블에서 숨김 */
+}
+
+
+.no-requests-message {
+  padding: 50px 20px;
+  text-align: center;
+  color: #777;
+  font-size: 1.1em;
+}
+
+.loading-message,
+.error-message-display {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 1.1em;
+  color: #777;
+}
+
+.error-message-display {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+
+/* 하단 총 합계 및 결제 버튼 (새로운 구조) */
+.total-payment-summary-final {
+  display: flex;
+  flex-direction: column; /* 세로로 쌓기 */
+  align-items: flex-end; /* 오른쪽 정렬 */
+  gap: 10px; /* 각 요약 줄 간격 */
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dashed #eee;
+  font-size: 1.0em;
+  font-weight: bold;
+  background-color: #f8f8f8; /* 배경색 추가 */
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #eee;
+}
+
+.total-payment-summary-final .summary-row {
+    display: flex;
+    justify-content: space-between; /* 라벨과 금액 양 끝 정렬 */
+    width: 100%; /* 전체 너비 */
+    max-width: 350px; /* 요약 블록의 최대 너비 */
+    padding-bottom: 5px; /* 줄 아래 간격 */
+    border-bottom: 1px dotted #e0e0e0; /* 점선 구분 */
+}
+.total-payment-summary-final .summary-row:last-child {
+    border-bottom: none; /* 마지막 줄은 구분선 없음 */
+    padding-bottom: 0;
+}
+
+.total-payment-summary-final .summary-row span {
+    color: #555;
+}
+
+.total-payment-summary-final .summary-row strong {
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.total-payment-summary-final .summary-row.final-amount {
+    margin-top: 10px; /* 최종 금액 위 간격 */
+    font-size: 1.2em;
+    color: #dc3545; /* 강조색 */
+    border-top: 2px solid #ddd; /* 굵은 구분선 */
+    padding-top: 10px;
+}
+.total-payment-summary-final .summary-row.final-amount strong {
+    font-size: 1.5em;
+    color: #dc3545;
+}
+
+.total-payment-summary-final .payment-button-final { /* 버튼명 변경 */
+  background-color: #28a745; /* 녹색 결제 버튼 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: auto;
+  margin-top: 20px; /* 요약 블록과의 간격 */
+}
+
+.total-payment-summary-final .payment-button-final:hover {
+  background-color: #218838;
+}
+
+/* 미디어 쿼리 */
+@media (max-width: 768px) {
+  .order-list-table {
+    min-width: 600px; /* 작은 화면에서 최소 너비 */
+  }
+  .total-payment-summary-final {
+    align-items: center; /* 중앙 정렬 */
+    width: 100%;
+    max-width: none;
+  }
+  .total-payment-summary-final .summary-row {
+    max-width: 300px; /* 요약 블록 내 각 줄 최대 너비 */
+  }
+  .total-payment-summary-final .payment-button-final {
+    width: 100%; /* 버튼 너비 100% */
+  }
+}

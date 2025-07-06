@@ -1,0 +1,15 @@
+/* src/pages/MyDeliveryCompletedPage.css */
+.my-delivery-completed-page {
+    flex-grow: 1;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  .my-delivery-completed-page .title-bar {
+    border-radius: 8px 8px 0 0;
+  }
+  .delivery-completed-content {
+    padding: 20px;
+  }
